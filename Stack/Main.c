@@ -15,5 +15,6 @@ int main()
     push(S, 6);
     pop(S, n);
     top(S, n);
+    size(S);
     return 0;
 }

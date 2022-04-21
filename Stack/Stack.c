@@ -4,8 +4,8 @@
 
 int initStack(SqStack s)
 {
-    s.base = (int*)malloc(MAXSIZE * sizeof(int));
-    if(!s.base)
+    s.base = (int *)malloc(MAXSIZE * sizeof(int));
+    if (!s.base)
         return OVERFLOW;
     s.top = s.base;
     s.stackSize = MAXSIZE;
@@ -14,24 +14,23 @@ int initStack(SqStack s)
 
 int push(SqStack s, int n)
 {
-    if(s.top - s.base >= s.stackSize)
+    if (s.top - s.base >= s.stackSize)
         return ERROR;
     *s.top++ = n;
     return OK;
 }
 
-
-int pop(SqStack s , int n)
+int pop(SqStack s, int n)
 {
-    if(s.top == s.base)
+    if (s.top == s.base)
         return ERROR;
-    n = * --s.top;
+    n = *--s.top;
     return OK;
 }
 
-int top(SqStack s , int n)
+int top(SqStack s, int n)
 {
-    if(s.top == s.base)
+    if (s.top == s.base)
         return ERROR;
     n = *(s.top - 1);
     return OK;
@@ -39,11 +38,10 @@ int top(SqStack s , int n)
 
 int isEmpty(SqStack s)
 {
-    if(s.top  == s.base)
+    if (s.top == s.base)
         return TRUE;
     return FALSE;
 }
-
 
 void destory(SqStack s)
 {
@@ -58,14 +56,12 @@ void destory(SqStack s)
 
 int size(SqStack s)
 {
-    
-    return s.top - s.base;;
+    return s.top - s.base;
 }
 
 void clear(SqStack s)
 {
-    if(s.base)
+    if (s.base)
         s.top = s.base;
     return;
 }
-
