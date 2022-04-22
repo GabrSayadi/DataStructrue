@@ -2,10 +2,10 @@
 #include <stdlib.h>
 #include "LinkedStack.h"
 
-int main() 
+int main()
 {
-    LinkStack S ;
-    int N ;
+    LinkStack S;
+    int N;
     init(S);
     push(S, 1);
     push(S, 4);

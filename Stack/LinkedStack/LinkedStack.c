@@ -10,7 +10,7 @@ void init(LinkStack S)
 
 int push(LinkStack S, int N)
 {
-    LinkStack p = (LinkStack*)malloc(sizeof(StackNode));
+    LinkStack p = (LinkStack)malloc(sizeof(StackNode));
     if (!p)
         return OVERFLOW;
     p->data = N;

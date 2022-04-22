@@ -2,7 +2,6 @@
 #include <stdlib.h>
 #include "Stack.h"
 
-
 int main()
 {
     SqStack S;

@@ -17,20 +17,12 @@ typedef struct
 } SqStack;
 
 int initStack(SqStack S);
-
 int push(SqStack S, int N);
-
 int pop(SqStack S, int N);
-
 int top(SqStack S, int N);
-
 int isEmpty(SqStack S);
-
 void destory(SqStack S);
-
 int size(SqStack S);
-
 void clear(SqStack S);
-
 
 #endif
