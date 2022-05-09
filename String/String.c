@@ -35,9 +35,9 @@ String concat(String s, String t)
     String res = {NULL, 0};
     int i, len = s.length + t.length;
     res.str = (char *)malloc(sizeof(char) * len);
-    for(i = 0; i < s.length; i++)
+    for (i = 0; i < s.length; i++)
         res.str[i] = s.str[i];
-    for(i = 0; i < t.length; i++)
+    for (i = 0; i < t.length; i++)
         res.str[i + s.length] = t.str[i];
     res.length = len;
     free(s.str);
@@ -45,12 +45,12 @@ String concat(String s, String t)
     return res;
 }
 
-int indexBF(String s , String t)
+int indexBF(String s, String t)
 {
-    int i = 1 , j = 1;
-    while(i <= s.length && j <= t.length)
+    int i = 1, j = 1;
+    while (i <= s.length && j <= t.length)
     {
-        if(s.str[i] == t.str[j])
+        if (s.str[i] == t.str[j])
         {
             i++;
             j++;
@@ -61,21 +61,21 @@ int indexBF(String s , String t)
             j = 1;
         }
     }
-    if(j > t.length)
+    if (j > t.length)
         return i - t.length;
     return 0;
 }
-void getNext(String t , int next[])
+void getNext(String t, int next[])
 {
-    int i = 1 , j = 0;
+    int i = 1, j = 0;
     next[1] = 0;
-    while(i < t.length)
+    while (i < t.length)
     {
-        if(t.str[i] == t.str[j])
+        if (t.str[i] == t.str[j])
         {
             next[++i] = ++j;
         }
-        else if(j > 0)
+        else if (j > 0)
         {
             j = next[j];
         }
@@ -86,16 +86,15 @@ void getNext(String t , int next[])
     }
 }
 
-
-int indexKMP(String s , String t , int pos)
+int indexKMP(String s, String t, int pos)
 {
     int next[MAXSIZE];
-    getNext(t , next);
+    getNext(t, next);
     int i = pos, j = 1;
 
-    while(i <= s.length && j <= t.length)
+    while (i <= s.length && j <= t.length)
     {
-        if(s.str[i] == t.str[j])
+        if (s.str[i] == t.str[j])
         {
             i++;
             j++;
@@ -105,8 +104,7 @@ int indexKMP(String s , String t , int pos)
             j = next[j];
         }
     }
-    if(j > t.length)
+    if (j > t.length)
         return i - t.length;
     return 0;
 }
-

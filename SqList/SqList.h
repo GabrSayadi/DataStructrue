@@ -3,6 +3,7 @@
 
 #define LIST_INIT_SIZE 100
 #define LISTINCREMENT 10
+#define ERROR 0
 
     typedef struct
     {

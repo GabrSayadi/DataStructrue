@@ -2,11 +2,11 @@
 #include <stdlib.h>
 #include "LinkedList.h"
 
-void merge_list(link_list l_one, link_list l_two)
+void merge_list(link_list L, link_list M)
 {
     link_list p, q, r, s;
-    p = l_one->next;
-    q = l_two->next;
+    p = L->next;
+    q = M->next;
     s = (link_list)malloc(sizeof(Node));
     r = s;
     while (p && q)
@@ -25,25 +25,30 @@ void merge_list(link_list l_one, link_list l_two)
         }
     }
     r->next = p ? p : q;
-    free(l_one);
-    free(l_two);
+    free(L);
+    free(M);
+    printf("L + M :");
     print_list(s);
+    return;
 }
 
 int main()
 {
     link_list L;
     link_list M;
-    link_list N;
+    int i , j ;
     init_list(&L);
     init_list(&M);
-    insert(L, 1, 1);
-    insert(L, 2, 2);
-    insert(L, 3, 3);
-    insert(L, 4, 4);
-    insert(M, 1, 5);
-    insert(M, 2, 6);
-    insert(M, 3, 7);
+    for (int  i = 1; i < 5; i++)
+        insert(L, i, i);
+    j = 1;
+    for (i = 5; i < 10; i++)
+        insert(M, j++, i);
+    
+    printf("L : ");
+    print_list(L);
+    printf("M : ");
+    print_list(M);
     merge_list(L, M);
     return 0;
 }

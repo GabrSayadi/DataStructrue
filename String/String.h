@@ -1,15 +1,45 @@
-#include <stdio.h>
-#include <stdlib.h>
-#include "String.h"
+#ifndef STRING_H_INCLUDED
+#define STRING_H_INCLUDED
 
-int main()
+#define MAXSIZE 300
+typedef struct
 {
-    String s, t;
-    initString(&s);
-    initString(&t);
-    scanf("%s", s.str);
-    scanf("%s", t.str);
-    printf("%d \n", indexBF(s, t));
-    printf("%d \n", indexKMP(s, t, 1));
-    return 0;
-}
+    char *str;
+    int length;
+} String;
+
+void initString(String *s);
+int length(String s);
+int compare(String s, String t);
+void clearStr(String *s);
+String concat(String s, String t);
+int indexBF(String s, String t);
+void getNext(String t, int next[]);
+int indexKMP(String s, String t, int pos);
+
+/*
+
+    #define   BLOCKSIZE 100
+
+    typedef struct StringNode
+    {
+        char str[BLOCKSIZE];
+        struct StringNode *next;
+    } StringNode , *LString;
+
+    typedef struct
+    {
+        LString *head, *tail;
+        int lenght;
+    }String;
+
+
+    _______  _________ __________
+    a b c -> c d d ->   dhafda ->
+    _______  _________ __________
+
+*/
+
+#endif 
+
+
