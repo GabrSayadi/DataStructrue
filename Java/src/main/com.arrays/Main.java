@@ -23,6 +23,7 @@ public class Main {
             dynamicArray.insert(i);
         }
         dynamicArray.printArray();
+        System.out.println(dynamicArray.sizeOfDynamicArray());
     }
 
     public static void main(String[] args) {
