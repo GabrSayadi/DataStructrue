@@ -44,17 +44,4 @@ public class WorkWithArray {
                             ", Age:" + person.age);
         }
     }
-
-    public static void main(String[] args) {
-        WorkWithArray Array = new WorkWithArray();
-
-        System.out.println("Nomal Array:");
-        Array.NormalArray();
-
-        System.out.println("2D Array:");
-        Array.TwoDArray();
-
-        System.out.println("Array of Object:");
-        Array.ArrayOfObject();
-    }
 }
