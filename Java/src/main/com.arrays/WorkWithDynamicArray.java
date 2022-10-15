@@ -34,12 +34,6 @@ public class WorkWithDynamicArray<T> {
         return info.length;
     }
 
-    public void delete(int element) {
-        if (element > sizeOfDynamicArray()) {
-            return;
-        }
-    }
-
     public void printArray() {
         for (int i = 0; i < info.length; i++) {
             System.out.println(info[i]);
